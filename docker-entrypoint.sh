@@ -11,7 +11,7 @@ set -e
 SSL_BASE_DIR="/etc/ssl"
 VOLUME_DIR_CONTENTS="${SSL_BASE_DIR}/openssl.cnf/* ${SSL_BASE_DIR}/certs/* ${SSL_BASE_DIR}/private/* /usr/share/ca-certificates/* /usr/local/share/ca-certificates/* /etc/grid-security/*"
 
-[[ ! -x ${SSL_BASE_DIR}/dhparam.pem ]] && \
+[[ ! -s ${SSL_BASE_DIR}/dhparam.pem ]] && \
     openssl dhparam -out ${SSL_BASE_DIR}/dhparam.pem 2048
 
 case ${1} in
