@@ -9,7 +9,7 @@ set -e
 # generate : generates a self signed certificate authority
 
 SSL_BASE_DIR="/etc/ssl"
-VOLUME_DIR_CONTENTS="${SSL_BASE_DIR}/openssl.cnf/* ${SSL_BASE_DIR}/certs/* ${SSL_BASE_DIR}/private/* /usr/share/ca-certificates/* /usr/local/share/ca-certificates/* /etc/grid-security/*"
+VOLUME_DIR_CONTENTS="${SSL_BASE_DIR}/openssl.cnf ${SSL_BASE_DIR}/certs/* ${SSL_BASE_DIR}/private/* /usr/share/ca-certificates/* /usr/local/share/ca-certificates/* /etc/grid-security/*"
 
 [[ ! -s ${SSL_BASE_DIR}/dhparam.pem ]] && \
     openssl dhparam -out ${SSL_BASE_DIR}/dhparam.pem 2048
