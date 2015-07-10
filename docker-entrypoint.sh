@@ -50,8 +50,8 @@ case ${1} in
                 -keyout ${SSL_BASE_DIR}/private/${base_filename}.key \
                 -out ${SSL_BASE_DIR}/private/${base_filename}.crt \
                 -subj ${SUBJ}
+            cp ${SSL_BASE_DIR}/private/${base_filename}.crt ${SSL_BASE_DIR}/private/${base_filename}_bundle.crt
         done
-        cp ${SSL_BASE_DIR}/private/${base_filename}.crt ${SSL_BASE_DIR}/private/${base_filename}_bundle.crt
         mkdir -p /etc/grid-security/certificates
         update-ca-certificates --fresh
         ;;
