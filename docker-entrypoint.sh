@@ -4,7 +4,7 @@ set -e
 # ************************************************************
 # Options passed to the docker container to run scripts
 # ************************************************************
-# archive  : archives the certificate authority into the IMPORT_EXPORT_PATH
+# backup   : archives the certificate authority into the IMPORT_EXPORT_PATH
 # import   : imports the certificate authority from the IMPORT_EXPORT_PATH
 # generate : generates a self signed certificate authority
 
@@ -15,7 +15,7 @@ VOLUME_DIR_CONTENTS="${SSL_BASE_DIR}/openssl.cnf ${SSL_BASE_DIR}/certs/* ${SSL_B
     openssl dhparam -out ${SSL_BASE_DIR}/dhparam.pem 2048
 
 case ${1} in
-    archive)
+    backup)
         /bin/tar \
             --create \
             --preserve-permissions \
